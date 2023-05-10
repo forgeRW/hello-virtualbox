@@ -165,7 +165,7 @@ sudo apt install -y linux-headers-$(uname -r) build-essential dkms
 3. Install VirtualBox Guest Additions. See [4.2.2.1. Installing the Linux Guest Additions](https://www.virtualbox.org/manual/UserManual.html#additions-linux) for more details. For example, if the version is `1.2.3` then the `VBox_GAs_X` value is `VBox_GAs_1.2.3`.
 
 ```bash
-sudo sh /media/$(whoami)/VBox_GAs_X/VBoxLinuxAdditions.run
+sudo sh /media/$( whoami )/VBox_GAs_X/VBoxLinuxAdditions.run
 ```
 
 4. Install OpenSSH server so we can use SSH to share files between the host and guest machines.
@@ -220,7 +220,7 @@ git config --global user.name $GIT_USERNAME && \
 10. Run the `$HOME/dev/github.com/$GIT_USERNAME/hello-virtualbox/my-setup.sh` script.
 
 ```bash
-source $HOME/dev/github.com/$GIT_USERNAME/hello-virtualbox/my-setup.sh
+bash $HOME/dev/github.com/$GIT_USERNAME/hello-virtualbox/my-setup.sh
 ```
 
 11. Restart the VM for the `$HOME/bin` directory and  nvm.

@@ -42,7 +42,7 @@ generate_desktop_entry() {
   echo "Name=${entry_name}" >> $entry_path
 }
 
-step901() {
+step1001() {
   # Set up SSH configuration for OpenSSH server.
   local putty_pub=$HOME/my-setup-ed25519.pub
   local ssh_dir=$HOME/.ssh
@@ -58,24 +58,24 @@ step901() {
   chmod 600 $authorized_keys
 }
 
-step902() {
+step1002() {
   # Install cURL and jq packages.
   sudo apt install -y curl jq
 }
 
-step903() {
+step1003() {
   # Create .bash_aliases file and bin and IDE directories.
   touch $ALIASES_FILE
   mkdir $MY_BIN
   mkdir $IDE_DIR
 }
 
-step904() {
+step1004() {
   # Install IntelliJ IDE.
   wget -O- $INTELLIJ | tar -xz -C $IDE_DIR
 }
 
-step905() {
+step1005() {
   # Install Visual Studio Code IDE.
   local vs_code_dir=$IDE_DIR/VSCode-linux-x64
   local entry_path=visual_studio_code.desktop
@@ -87,7 +87,7 @@ step905() {
   generate_desktop_entry $entry_path $entry_exec $entry_icon "${entry_name}"
 }
 
-step906() {
+step1006() {
   # Install Go/Golang
   local go_bin=$GO_DIR/go$GO_VERSION/bin
   local bin_go=$go_bin/go
@@ -106,25 +106,27 @@ step906() {
   mkdir $gopath
 }
 
-step907() {
-  #Install Node.js/JavaScript
+step1007() {
+  # Install Node.js/JavaScript
   wget -qO- $NVM_URL | bash
 }
 
-step908() {
+step1008() {
+  # Install secondary version of Python
   local setup_dir=$( cd -P "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-  source $setup_dir/script/setup-python.sh
+
+  bash $setup_dir/script/setup-python.sh
 }
 
 run_main() {
-  step901
-  step902
-  step903
-  step904
-  step905
-  step906
-  step907
-  step908
+  step1001
+  step1002
+  step1003
+  step1004
+  step1005
+  step1006
+  step1007
+  step1008
 }
 
 run_main

@@ -12,6 +12,7 @@ VENV_DIR=$MY_PYTHON_DIR/my-venv
 
 
 step01() {
+  # Add location for Python source package
   local source_location='deb-src http://archive.ubuntu.com/ubuntu/ jammy main'
 
   cp $SOURCES_LIST $HOME
@@ -19,6 +20,7 @@ step01() {
 }
 
 step02() {
+  # Install dependencies
   sudo apt update
   sudo apt build-dep -y python3
   sudo apt install -y pkg-config
@@ -29,6 +31,7 @@ step02() {
 }
 
 step03() {
+  # Remove location for Python source package
   local home_sources_list=$HOME/sources.list
 
   sudo cp $home_sources_list $SOURCES_LIST
@@ -37,6 +40,7 @@ step03() {
 }
 
 step04() {
+  # Build binaries for the specified Python version
   mkdir $MY_PYTHON_DIR $VENV_DIR
   wget -O- $PYTHON_URL | tar -xz -C $PYTHON_DIR
   pushd $PYTHON_DIR_VER
@@ -47,6 +51,7 @@ step04() {
 }
 
 step05() {
+  # Create symbolic links to Python and pip binaries
   local ver_no_patch=$(echo "$PYTHON_VERSION" | sed -r 's/^([0-9]+\.[0-9]+).*$/\1/')
   local bin_python=$MY_PYTHON_DIR/bin/python$ver_no_patch
   local bin_pip=$MY_PYTHON_DIR/bin/pip$ver_no_patch
