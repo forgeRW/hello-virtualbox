@@ -23,6 +23,13 @@ step_java_add_path() {
     ln -sf $java_path $HOME/bin/java-$java_version
     ln -sf $java_path $HOME/bin/java
     java --version
+
+    if [ ! -f $HOME/.bash_aliases ]; then
+        touch $HOME/.bash_aliases
+        echo Created the file $HOME/.bash_aliases
+    fi
+    echo "JDK_HOME=$java_dir/$(ls $java_dir)" >> $HOME/.bash_aliases
+    echo "JAVA_HOME=$java_dir/$(ls $java_dir)" >> $HOME/.bash_aliases
 }
 
 step_java_delete_auxiliary_files() {
