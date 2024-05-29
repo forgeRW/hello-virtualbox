@@ -29,7 +29,7 @@ step_java_add_path() {
         echo Created the file $HOME/.bash_aliases
     fi
     echo "JDK_HOME=$java_dir/$(ls $java_dir)" >> $HOME/.bash_aliases
-    echo "JAVA_HOME=$java_dir/$(ls $java_dir)" >> $HOME/.bash_aliases
+    echo 'JAVA_HOME=$JDK_HOME' >> $HOME/.bash_aliases
 }
 
 step_java_delete_auxiliary_files() {
