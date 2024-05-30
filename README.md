@@ -11,7 +11,7 @@ The repository stores my notes for using VirtualBox and setting up a VM.
 * Java 21
 * Maven 3.9.7
 * Python 3.11.9 and 3.12.3
-* nvm 0.39.7 and Node 20.14.0 . The lts version is Node 20.14.0 .
+* nvm 0.39.7 and Node 20.14.0 . The LTS version is Node 20.14.0 .
 * Go 1.22.3
 * VS Code 1.89.1
 * Docker version 26.1.3, build b72abbb
@@ -36,6 +36,7 @@ Output:
     ├── run_step_apt.sh
     ├── run_step_docker.sh
     ├── run_step_git.sh
+    ├── run_step_go.sh
     ├── run_step_java_maven.sh
     ├── run_step_java.sh
     ├── run_step_node.sh
@@ -46,7 +47,7 @@ Output:
 
 2. Run the script and complete the interactive setup wizard.
 ```bash
-./run_setup.sh
+bash ./run_setup.sh
 ```
 
 # Example `.desktop` File
@@ -66,6 +67,8 @@ Name=Hello Application
 * [Python Developer's Guide, Setup and building](https://devguide.python.org/getting-started/setup-building/)
 * [Configure Python](https://docs.python.org/3/using/configure.html)
 * [nvm](https://github.com/nvm-sh/nvm)
+* [Go, Download and install](https://go.dev/doc/install)
+* [Managing Go installations](https://go.dev/doc/manage-install)
 * [VS Code Updates](https://code.visualstudio.com/updates)
 * [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 * VS Code Extension Pack: [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
