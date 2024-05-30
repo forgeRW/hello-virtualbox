@@ -39,7 +39,7 @@ run_step_node() {
     local nvm_version=$my_answer
     nvm_version=${nvm_version#*v} # GitHub release includes the letter v but nvm version command excludes it
 
-    # step_node_install_shell_function
+    step_node_install_shell_function
     step_node_install_lts
 }
 
