@@ -11,13 +11,12 @@ step_node_install_shell_function() {
     echo Added support for nvm in the file $HOME/.bashrc 
 }
 
-step_node_check_nvm_version() {
-    declare -a some_array=(
-        "Start another non-login session and check the nvm version using the command below"
-        "nvm -v"
-        "Have you confirmed that the nvm version is $nvm_version?"
-        )
-    ask_and_confirm_manual_action "${some_array[@]}"
+step_node_install_lts() {
+    NVM_DIR="$XDG_CONFIG_HOME/nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    nvm install --lts
+    nvm -v
+    node -v
+
 }
 
 run_step_node() {
@@ -40,8 +39,8 @@ run_step_node() {
     local nvm_version=$my_answer
     nvm_version=${nvm_version#*v} # GitHub release includes the letter v but nvm version command excludes it
 
-    step_node_install_shell_function
-    step_node_check_nvm_version
+    # step_node_install_shell_function
+    step_node_install_lts
 }
 
 run_step_node
