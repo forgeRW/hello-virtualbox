@@ -24,6 +24,11 @@ step_java_add_path() {
     ln -sf $java_path $HOME/bin/java
     java --version
 
+    local javac_path=$java_dir/$(ls $java_dir)/bin/javac
+    ln -sf $javac_path $HOME/bin/javac$java_version
+    ln -sf $javac_path $HOME/bin/javac
+    java --version
+
     if [ ! -f $HOME/.bash_aliases ]; then
         touch $HOME/.bash_aliases
         echo Created the file $HOME/.bash_aliases
