@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -x
 
 add_courtesy_reminder() {
     echo
@@ -20,6 +20,7 @@ main() {
     script/run_step_java_maven.sh
     script/run_step_python.sh
     script/run_step_node.sh
+    script/run_step_go.sh
     script/run_step_vscode.sh
     script/run_step_docker.sh
     add_courtesy_reminder

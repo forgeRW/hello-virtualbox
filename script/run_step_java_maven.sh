@@ -15,7 +15,7 @@ step_maven_download_and_extract_tarball() {
 
 step_maven_add_path() {
     local maven_path=$maven_dir/apache-maven-$maven_version/bin/mvn
-    ln -sf $maven_path $HOME/bin/mvn-$maven_version
+    ln -sf $maven_path $HOME/bin/mvn$maven_version
     ln -sf $maven_path $HOME/bin/mvn
     mvn -v
 }

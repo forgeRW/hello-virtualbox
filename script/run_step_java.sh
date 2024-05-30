@@ -20,7 +20,7 @@ step_java_download_and_extract_tarball() {
 
 step_java_add_path() {
     local java_path=$java_dir/$(ls $java_dir)/bin/java
-    ln -sf $java_path $HOME/bin/java-$java_version
+    ln -sf $java_path $HOME/bin/java$java_version
     ln -sf $java_path $HOME/bin/java
     java --version
 

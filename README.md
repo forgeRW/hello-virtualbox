@@ -11,7 +11,8 @@ The repository stores my notes for using VirtualBox and setting up a VM.
 * Java 21
 * Maven 3.9.7
 * Python 3.11.9 and 3.12.3
-* nvm 0.39.7
+* nvm 0.39.7 and Node 20.14.0 . The lts version is Node 20.14.0 .
+* Go 1.22.3
 * VS Code 1.89.1
 * Docker version 26.1.3, build b72abbb
 
