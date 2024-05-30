@@ -14,9 +14,10 @@ step_node_install_shell_function() {
 step_node_install_lts() {
     NVM_DIR="$XDG_CONFIG_HOME/nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     nvm install --lts
+    echo Installed nvm version
     nvm -v
+    echo Installed node version
     node -v
-
 }
 
 run_step_node() {
